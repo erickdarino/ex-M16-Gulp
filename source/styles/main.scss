@@ -1,0 +1,39 @@
+@use 'resets.scss';
+@use 'variaveis.scss';
+@use 'header.scss';
+@use 'produtos.scss';
+
+
+body {
+    background-image: linear-gradient(-4deg ,#f8af6b, variaveis.$corPrincipal);
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+@media screen and (max-width: variaveis.$tablet) {
+    .container {
+        max-width: 80%;
+    }
+
+    section .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+    section .products{
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: 32px;
+    }
+}

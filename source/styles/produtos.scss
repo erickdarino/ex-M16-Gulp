@@ -1,0 +1,53 @@
+@use 'variaveis.scss';
+@mixin costumTittle($border-radius: 50px 0px 0px 50px ) {
+    font-weight: bolder;
+    border-radius: $border-radius;
+    padding: 12px;
+    color: variaveis.$corDoTexto;
+    background-image: linear-gradient(to right,variaveis.$corSecundaria,  variaveis.$corDoBotao, variaveis.$corPrincipal);
+}
+section {
+    padding: 56px 0;
+
+    h2{ 
+        @include costumTittle();
+        display: flex;
+        width: 300px;
+        justify-items: center;
+        img {
+            width: 30px;
+        }
+    }
+    h4 {
+        @include costumTittle(12px 12px);
+    }
+
+    .products {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 32.66%);
+        column-gap: 1%;
+        row-gap: 4%;
+        width: 100%;
+    }
+    
+    .product-item img {
+        width: 100%;
+        border-radius: 16px;
+    }
+    
+    .product-button {
+        display: block;
+        background-color: variaveis.$corDoBotao;
+        color:variaveis.$corDoTexto;
+        text-align: center;
+        width: 100%;
+        padding: 8px 0;
+        border-radius: 8px;
+        margin-top: 8px;
+        text-decoration: none;
+        &:hover{
+        background-color: darken(variaveis.$corDoBotao, 15%);
+        }
+    }
+}
